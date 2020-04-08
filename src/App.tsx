@@ -1,7 +1,16 @@
 import * as React from 'react';
+import SavingGoal from './pages/SavingGoal';
+import Header from './components/Header';
 
-const App: React.FunctionComponent = () => {
-  return <div>Origin Frontend Take Home</div>;
+import './assets/styles/app.scss';
+
+const App: React.FC = () => {
+  return (
+    <div className="app">
+      <Header />
+      <SavingGoal />
+    </div>
+  );
 };
 
 export default App;

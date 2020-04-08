@@ -1,0 +1,43 @@
+@import './global.scss';
+
+body {
+  margin: 0 auto;
+  font-family: 'Work Sans', sans-serif;
+
+  & * {
+    box-sizing: border-box;
+    color: $black-1;
+  }
+
+  * strong,
+  small {
+    color: inherit;
+  }
+
+  & p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  input,
+  small,
+  label,
+  ul,
+  li,
+  button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+}
+
+.app {
+  font-family: 'Work Sans', sans-serif;
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: $white-2;
+}
