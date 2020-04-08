@@ -13,6 +13,13 @@
   & .back {
     flex: 20;
     background-color: $white-4;
+
+    &:disabled {
+      background: $white-3;
+      & img {
+        opacity: 0.2\;
+      }
+    }
   }
 
   & .pickButton {

@@ -4,12 +4,14 @@ export interface InitialState {
   year: number;
   month: string;
   amount: number;
+  deposit: number;
 }
 
 export const initialState: InitialState = {
   year: 1999,
   month: 'January',
-  amount: null
+  amount: 0.0,
+  deposit: 1
 };
 
 export interface DispatchAction extends Action {
@@ -19,7 +21,8 @@ export interface DispatchAction extends Action {
 export enum ActionType {
   UpdateYear,
   UpdateMonth,
-  UpdateAmount
+  UpdateAmount,
+  UpdateDeposit
 }
 
 export const rootReducer: Reducer<InitialState, DispatchAction> = (
@@ -33,6 +36,8 @@ export const rootReducer: Reducer<InitialState, DispatchAction> = (
     return { ...state, month: action.payload.month || '' };
   } else if (action.type === ActionType.UpdateAmount) {
     return { ...state, amount: action.payload.amount || 0 };
+  } else if (action.type === ActionType.UpdateDeposit) {
+    return { ...state, deposit: action.payload.deposit || 0 };
   } else return state;
 };
 
@@ -51,4 +56,7 @@ export class RootDispatcher {
 
   updateAmount = (amount: number) =>
     this.dispatch({ type: ActionType.UpdateAmount, payload: { amount } });
+
+  updateDeposit = (deposit: number) =>
+    this.dispatch({ type: ActionType.UpdateDeposit, payload: { deposit } });
 }

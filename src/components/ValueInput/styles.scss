@@ -24,7 +24,15 @@
     animation-iteration-count: infinite;
   }
 
-  & input {
+  & .inputCurrency {
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: start;
+    letter-spacing: -0.16;
+    color: $black-1;
+
     flex: 77;
     width: inherit;
     letter-spacing: -0.01em;
