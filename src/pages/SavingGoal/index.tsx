@@ -57,8 +57,11 @@ const SavingGoal: React.FC = () => {
           </span>
           <span className="descriptionSummary">
             <p>
-              You are plaining <strong>{deposit} monthly deposits</strong> to
-              reach your <strong>${amount} </strong>goal by{' '}
+              You are plaining{' '}
+              <strong>
+                {deposit} monthly {deposit > 1 ? 'deposits' : 'deposit'}
+              </strong>{' '}
+              to reach your <strong>${amount} </strong>goal by{' '}
               <strong>
                 {month} {year}
               </strong>

@@ -23,7 +23,7 @@
     color: $gray-1;
   }
 
-  & .inputCurrency {
+  & .inputAmount {
     flex: 80;
     width: inherit;
     height: 100%;
@@ -50,7 +50,7 @@
       line-height: 26px;
     }
 
-    & .inputCurrency {
+    & .inputAmount {
       padding: 0 4.5vw;
       font-size: calc(#{$font} * 2.6);
     }

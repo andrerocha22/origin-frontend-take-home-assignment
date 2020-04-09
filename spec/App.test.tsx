@@ -1,7 +1,8 @@
-import * as React from 'react';
-import { shallow } from 'enzyme';
+import React from 'react';
+
 import App from '../src/App';
-import SavingGoal from "../src/pages/SavingGoal"
+
+import { shallow } from 'enzyme';
 
 describe('App', () => {
   it('renders', () => {

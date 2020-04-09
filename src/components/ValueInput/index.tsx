@@ -9,7 +9,7 @@ interface StateProps {
   amount: number;
 }
 
-const ValueInput: React.FC = () => {
+const ValueInput: React.FC = props => {
   const { amount } = useSelector<InitialState, StateProps>(
     (state: InitialState) => {
       return {
@@ -31,7 +31,7 @@ const ValueInput: React.FC = () => {
       <span className="valueInput">
         <span className="currencyIcon">$</span>
         <CurrencyInput
-          className="inputCurrency"
+          className="inputAmount"
           onChangeEvent={e => {
             handleChange(e.target.value);
           }}
