@@ -36,6 +36,10 @@
     line-height: 24px;
     text-align: start;
     letter-spacing: -0.16;
+
+    &:focus {
+      outline: 0;
+    }
   }
 }
 

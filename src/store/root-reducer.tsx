@@ -29,16 +29,19 @@ export const rootReducer: Reducer<InitialState, DispatchAction> = (
   state = initialState,
   action
 ) => {
-  //Trocar para switch
-  if (action.type === ActionType.UpdateYear) {
-    return { ...state, year: action.payload.year || 0 };
-  } else if (action.type === ActionType.UpdateMonth) {
-    return { ...state, month: action.payload.month || '' };
-  } else if (action.type === ActionType.UpdateAmount) {
-    return { ...state, amount: action.payload.amount || 0 };
-  } else if (action.type === ActionType.UpdateDeposit) {
-    return { ...state, deposit: action.payload.deposit || 0 };
-  } else return state;
+  switch (action.type) {
+    case ActionType.UpdateYear:
+      return { ...state, year: action.payload.year || 0 };
+    case ActionType.UpdateMonth:
+      return { ...state, month: action.payload.month || '' };
+    case ActionType.UpdateAmount:
+      return { ...state, amount: action.payload.amount || 0 };
+    case ActionType.UpdateDeposit:
+      return { ...state, deposit: action.payload.deposit || 0 };
+
+    default:
+      return state;
+  }
 };
 
 export class RootDispatcher {

@@ -20,6 +20,14 @@
         opacity: 0.2;
       }
     }
+
+    &:focus {
+      outline: 0;
+    }
+
+    &:hover {
+      background-color: rgb(195, 221, 255);
+    }
   }
 
   & .dateDisplay {
@@ -55,6 +63,14 @@
     background-color: $white-4;
     & img {
       transform: scale(-1, 1);
+    }
+
+    &:focus {
+      outline: 0;
+    }
+
+    &:hover {
+      background-color: rgb(195, 221, 255);
     }
   }
 }
