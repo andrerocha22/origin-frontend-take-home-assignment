@@ -3,8 +3,8 @@ import './styles.scss';
 import ValueInput from '../../components/ValueInput';
 import DateInput from '../../components/DateInput';
 
-import { useDispatch, useSelector } from 'react-redux';
-import { InitialState, RootDispatcher } from '../../store/root-reducer';
+import { useSelector } from 'react-redux';
+import { InitialState } from '../../store/root-reducer';
 
 interface StateProps {
   year: number;
@@ -27,15 +27,15 @@ const SavingGoal: React.FC = () => {
   });
 
   const depositValue = () => {
-    let valueToString = amount.toString(10).replace(/,/g, '');
-    let depositValue = Number(valueToString) / deposit;
+    const valueToString = amount.toString(10).replace(/,/g, '');
+    const depositValue = Number(valueToString) / deposit;
     return depositValue.toFixed(2);
   };
 
   return (
     <section className="savingGoalSimulator">
       <h3>
-        Let's plan your <strong>saving goal.</strong>
+        Let&apos;s plan your <strong>saving goal.</strong>
       </h3>
       <div className="goalCalculator">
         <div className="calculatorHeader">
@@ -49,16 +49,25 @@ const SavingGoal: React.FC = () => {
         </div>
 
         <div className="summary">
-          <h3>Monthly amount</h3>
-          <h2>${depositValue()}</h2>
-          <p>
-            You are plaining <strong>{deposit} monthly deposits</strong> to
-            reach your <strong>${amount} </strong>goal by{' '}
-            <strong>
-              {month} {year}
-            </strong>
-            .
-          </p>
+          <span className="depositSummary">
+            <h3>
+              Monthly <span className="amountText">amount</span>
+            </h3>
+            <h2>${depositValue()}</h2>
+          </span>
+          <span className="descriptionSummary">
+            <p>
+              You are plaining <strong>{deposit} monthly deposits</strong> to
+              reach your <strong>${amount} </strong>goal by{' '}
+              <strong>
+                {month} {year}
+              </strong>
+              .
+            </p>
+          </span>
+        </div>
+        <div className="confirmButton">
+          <button disabled={amount === 0 ? true : false}>Confirm</button>
         </div>
       </div>
     </section>

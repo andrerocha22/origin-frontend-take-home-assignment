@@ -8,7 +8,9 @@ module.exports = {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   collectCoverage: true,
   moduleNameMapper: {
-    '\\.(svg|jpg|png|css)$': '<rootDir>/spec/empty-module.js'
+    '\\.(svg|jpg|png|css)$': '<rootDir>/spec/empty-module.js',
+    '\\.scss$': 'identity-obj-proxy',
+    '^lodash-es$': 'lodash'
   },
   setupFilesAfterEnv: ['<rootDir>spec/setup.js'],
   moduleDirectories: ['node_modules', 'src']

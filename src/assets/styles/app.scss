@@ -6,38 +6,33 @@ body {
 
   & * {
     box-sizing: border-box;
-    color: $black-1;
   }
 
-  * strong,
-  small {
-    color: inherit;
-  }
-
-  & p,
-  h1,
+  & h1,
   h2,
   h3,
   h4,
   h5,
-  input,
+  p,
   small,
   label,
-  ul,
-  li,
   button {
     margin: 0;
     padding: 0;
     border: 0;
   }
+  input {
+    font-family: 'Work Sans', sans-serif;
+  }
 }
 
 .app {
-  font-family: 'Work Sans', sans-serif;
-  position: relative;
-  display: flex;
   width: 100%;
+  background: $white-2;
+  font-family: 'Work Sans', sans-serif;
+  display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $white-2;
+  margin-top: 8.9vh;
+  min-height: calc(100% - 8.9vh);
 }

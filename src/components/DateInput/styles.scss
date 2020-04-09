@@ -17,12 +17,12 @@
     &:disabled {
       background: $white-3;
       & img {
-        opacity: 0.2\;
+        opacity: 0.2;
       }
     }
   }
 
-  & .pickButton {
+  & .dateDisplay {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,6 +56,15 @@
     background-color: $white-4;
     & img {
       transform: scale(-1, 1);
+    }
+  }
+}
+
+@media all and (max-width: 768px) {
+  .date {
+    margin-top: 15px;
+    & .dateInput {
+      height: 7vh;
     }
   }
 }
