@@ -158,10 +158,11 @@
 
         & h2 {
           font-size: calc(#{$font} * 1.8);
+          line-height: 20px;
         }
 
         & h4 {
-          font-size: calc(#{$font} * 1);
+          font-size: calc(#{$font} * 1.4);
         }
       }
 
@@ -188,6 +189,15 @@
 
           & h2 {
             font-size: 26px;
+          }
+        }
+
+        & .descriptionSummary {
+          & p {
+            color: $black-1;
+            font-weight: normal;
+            font-size: calc(#{$font} * 1.4);
+            line-height: 22px;
           }
         }
       }
