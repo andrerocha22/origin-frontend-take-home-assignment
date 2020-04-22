@@ -4,10 +4,13 @@ import App from '../src/App';
 
 import { shallow } from 'enzyme';
 
-describe('App', () => {
-  it('renders', () => {
-    const component = shallow(<App />);
+import toJson from 'enzyme-to-json';
 
-    expect(component.exists()).toEqual(true);
+describe('<App />', () => {
+  describe('render()', () => {
+    test('renders the component app', () => {
+      const wrapper = shallow(<App />);
+      expect(toJson(wrapper)).toMatchSnapshot();
+    });
   });
 });

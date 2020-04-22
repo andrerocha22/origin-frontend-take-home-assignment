@@ -3,6 +3,7 @@ import './styles.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { InitialState, RootDispatcher } from '../../store/root-reducer';
 import moment from 'moment';
+const arrowIcon = require('../../assets/icons/arrow.svg') as string;
 
 const months = [
   'January',
@@ -59,7 +60,7 @@ const DateInput: React.FC = () => {
     return monthDifference;
   };
 
-  const handleFoward = () => {
+  const handleForward = () => {
     if (selectedMonth === months.indexOf('December')) {
       const nextYear = year + 1;
       rootDispatcher.updateYear(nextYear);
@@ -72,6 +73,7 @@ const DateInput: React.FC = () => {
       setSelectedMonth(months.indexOf('January'));
     } else {
       const newMonthIndex = selectedMonth + 1;
+
       rootDispatcher.updateMonth(months[newMonthIndex]);
 
       rootDispatcher.updateDeposit(monthDiff(year, newMonthIndex));
@@ -103,34 +105,35 @@ const DateInput: React.FC = () => {
 
   const keyHandler = e => {
     if (e.key === 'ArrowRight') {
-      handleFoward();
-    } else if (e.key === 'ArrowLeft') {
+      handleForward();
+    }
+    if (e.key === 'ArrowLeft') {
       year === currentYear && month === minMonth ? null : handleBackward();
     }
   };
 
   return (
-    <div className="date">
+    <div className="date" data-test="setDateComponent">
       <label>Reach goal by</label>
       <div className="dateInput">
         <button
-          className="back"
+          className="backward"
           onClick={() => handleBackward()}
           onKeyUp={keyHandler}
           disabled={year === currentYear && month === minMonth ? true : false}
         >
-          <img src={require('~/assets/icons/arrow.svg')} alt="arrow-left" />
+          <img src={arrowIcon} alt="arrow-left" />
         </button>
         <span className="dateDisplay">
-          <h1>{month}</h1>
-          <h2>{year}</h2>
+          <h1 className="month">{month}</h1>
+          <h2 className="year">{year}</h2>
         </span>
         <button
           className="forward"
           onKeyUp={keyHandler}
-          onClick={() => handleFoward()}
+          onClick={() => handleForward()}
         >
-          <img src={require('~/assets/icons/arrow.svg')} alt="arrow-right" />
+          <img src={arrowIcon} alt="arrow-right" />
         </button>
       </div>
     </div>

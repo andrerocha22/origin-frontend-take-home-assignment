@@ -53,7 +53,7 @@ const SavingGoal: React.FC = () => {
             <h3>
               Monthly <span className="amountText">amount</span>
             </h3>
-            <h2>${depositValue()}</h2>
+            <h2 className="depositValue">${depositValue()}</h2>
           </span>
           <span className="descriptionSummary">
             <p>
@@ -69,8 +69,8 @@ const SavingGoal: React.FC = () => {
             </p>
           </span>
         </div>
-        <div className="confirmButton">
-          <button disabled={amount === 0 ? true : false}>Confirm</button>
+        <div className="confirmButtonContainer">
+          <button className='confirmButton' disabled={amount === 0 ? true : false}>Confirm</button>
         </div>
       </div>
     </section>

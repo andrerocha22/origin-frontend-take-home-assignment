@@ -26,7 +26,7 @@ const ValueInput: React.FC = props => {
   };
 
   return (
-    <div>
+    <div className="value">
       <label>Total amount</label>
       <span className="valueInput">
         <span className="currencyIcon">$</span>
