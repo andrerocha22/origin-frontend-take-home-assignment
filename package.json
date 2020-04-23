@@ -27,6 +27,7 @@
     "@typescript-eslint/eslint-plugin": "^2.25.0",
     "@typescript-eslint/parser": "^2.25.0",
     "babel-jest": "^25.2.3",
+    "cypress": "^4.4.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.4.4",
@@ -49,7 +50,8 @@
     "test:watch": "jest --watch",
     "lint": "eslint ./src/**/**/*.tsx ./spec/**/*.tsx --quiet",
     "dev": "parcel ./src/index.html",
-    "build": "parcel build ./src/index.html"
+    "build": "parcel build ./src/index.html",
+    "cypress:open": "cypress open"
   },
   "jest": {
     "snapshotSerializers": [

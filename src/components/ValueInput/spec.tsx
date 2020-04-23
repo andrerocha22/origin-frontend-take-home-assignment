@@ -28,7 +28,7 @@ describe('<ValueInput/>', () => {
     );
   });
 
-  it('Should render without errors', () => {
+  it('Should render without errors', () => {  
     expect(wrapper.find('.value').length).toEqual(1);
   });
 
